@@ -1,109 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+<!DOCTYPE html>
+<html lang="en-US">
+
 <head>
-   <title>Horloge</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <style type="text/css">
-      .aig
-      {
-         position: absolute;
-         bottom: 283px;
-         -moz-transform-origin: bottom center;
-         -webkit-transform-origin: bottom center;
-         -o-transform-origin: bottom center;
-         -ms-transform-origin: bottom center;
-         transform-origin: bottom center;
-      }
-      #horloge
-      {
-         position: relative;
-         height: 567px;
-         width: 567px;
-         border: 1px solid black;
-         -moz-border-radius: 284px;
-         -webkit-border-radius: 284px;
-         -o-border-radius: 284px;
-         -ms-border-radius: 284px;
-         border-radius: 284px;
-      }
-   </style>
-   <script type="text/javascript">
-   window.onload = function()
-      {
-         if(document.getElementsByTagName('body')[0].style.MozTransform == ''
-            || document.getElementsByTagName('body')[0].style.WebkitTransform == ''
-            || document.getElementsByTagName('body')[0].style.OTransform == ''
-            || document.getElementsByTagName('body')[0].style.OTransform
-            || document.getElementsByTagName('body')[0].style.msTransform == ''
-            || document.getElementsByTagName('body')[0].style.transform == '')
-         {
-            var aigS = document.createElement('img');
-               aigS.setAttribute('src'  , 'aigS.png');
-               aigS.setAttribute('class', 'aig');
-               aigS.setAttribute('alt'  , 'aiguille des secondes');
-               aigS.setAttribute('style', 'left: 283px;');
-
-            var aigM = document.createElement('img');
-               aigM.setAttribute('src'  , 'aigM.png');
-               aigM.setAttribute('class', 'aig');
-               aigM.setAttribute('alt'  , 'aiguille des minutes');
-               aigM.setAttribute('style', 'left: 278px;');
-
-            var aigH = document.createElement('img');
-               aigH.setAttribute('src'  , 'aigH.png');
-               aigH.setAttribute('class', 'aig');
-               aigH.setAttribute('alt'  , 'aiguille des heures');
-               aigH.setAttribute('style', 'left: 278px;');
-
-            var horloge = document.getElementById('horloge');
-               horloge.appendChild(aigS);
-               horloge.appendChild(aigM);
-               horloge.appendChild(aigH);
-               horloge.setAttribute('style', 'background: url(\'cadran.png\');');
-
-            var d    = new Date();
-            var time = d.getSeconds() + 60 * d.getMinutes() + 3600 * d.getHours();
-
-            aigS.style.MozTransform    = 'rotate(' + (time * 6) + 'deg)';
-            aigS.style.WebkitTransform = 'rotate(' + (time * 6) + 'deg)';
-            aigS.style.OTransform      = 'rotate(' + (time * 6) + 'deg)';
-            aigS.style.msTransform     = 'rotate(' + (time * 6) + 'deg)';
-            aigS.style.transform       = 'rotate(' + (time * 6) + 'deg)';
-            aigM.style.MozTransform    = 'rotate(' + Math.round(time / 10) + 'deg)';
-            aigM.style.WebkitTransform = 'rotate(' + Math.round(time / 10) + 'deg)';
-            aigM.style.OTransform      = 'rotate(' + Math.round(time / 10) + 'deg)';
-            aigM.style.msTransform     = 'rotate(' + Math.round(time / 10) + 'deg)';
-            aigM.style.transform       = 'rotate(' + Math.round(time / 10) + 'deg)';
-            aigH.style.MozTransform    = 'rotate(' + Math.round(time / 120) + 'deg)';
-            aigH.style.WebkitTransform = 'rotate(' + Math.round(time / 120) + 'deg)';
-            aigH.style.OTransform      = 'rotate(' + Math.round(time / 120) + 'deg)';
-            aigH.style.msTransform     = 'rotate(' + Math.round(time / 120) + 'deg)';
-            aigH.style.transform       = 'rotate(' + Math.round(time / 120) + 'deg)';
-
-            setInterval(function() {
-               time++;
-               aigS.style.MozTransform    = 'rotate(' + (time * 6) + 'deg)';
-               aigS.style.WebkitTransform = 'rotate(' + (time * 6) + 'deg)';
-               aigS.style.OTransform      = 'rotate(' + (time * 6) + 'deg)';
-               aigS.style.msTransform     = 'rotate(' + (time * 6) + 'deg)';
-               aigS.style.transform       = 'rotate(' + (time * 6) + 'deg)';
-               aigM.style.MozTransform    = 'rotate(' + Math.round(time / 10) + 'deg)';
-               aigM.style.WebkitTransform = 'rotate(' + Math.round(time / 10) + 'deg)';
-               aigM.style.OTransform      = 'rotate(' + Math.round(time / 10) + 'deg)';
-               aigM.style.msTransform     = 'rotate(' + Math.round(time / 10) + 'deg)';
-               aigM.style.transform       = 'rotate(' + Math.round(time / 10) + 'deg)';
-               aigH.style.MozTransform    = 'rotate(' + Math.round(time / 120) + 'deg)';
-               aigH.style.WebkitTransform = 'rotate(' + Math.round(time / 120) + 'deg)';
-               aigH.style.OTransform      = 'rotate(' + Math.round(time / 120) + 'deg)';
-               aigH.style.msTransform     = 'rotate(' + Math.round(time / 120) + 'deg)';
-               aigH.style.transform       = 'rotate(' + Math.round(time / 120) + 'deg)';
-            }, 1000);
-         }
-      };
-   </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mon Horloge Digital</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <script src="indes.js" defer></script>
 </head>
+
 <body>
-   <div id="horloge">
-   </div>
+<main class="main">
+    <div class="clockbox">
+        <svg id="clock" xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+            
+         <!--L'élément g est un conteneur utilisé pour grouper des objets-->
+            <g id="face">
+                <circle class="circle" cx="300" cy="300" r="253.9"/>
+                <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"/>
+                <circle class="mid-circle" cx="300" cy="300" r="16.2"/>
+            </g>
+            
+            <g id="hour">
+                <path class="hour-arm" d="M300.5 298V142"/>
+                <circle class="sizing-box" cx="300" cy="300" r="253.9"/>
+            </g>
+            <g id="minute">
+                <path class="minute-arm" d="M300.5 298V67"/>
+                <circle class="sizing-box" cx="300" cy="300" r="253.9"/>
+            </g>
+            <g id="second">
+                <path class="second-arm" d="M300.5 350V55"/>
+                <circle class="sizing-box" cx="300" cy="300" r="253.9"/>
+            </g>
+        </svg>
+    </div><!-- .clockbox -->
+</main>
+
 </body>
+
 </html>
