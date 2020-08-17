@@ -9,13 +9,13 @@
 
 .clockbox,
 #clock {
-    width: 100%;
+    width: 60%;
 }
 
 /* Clock styles */
 .circle {
     fill: none;
-    stroke: #000;
+    stroke: rgb(206, 91, 148);
     stroke-width: 9;
     stroke-miterlimit: 10;
 }
